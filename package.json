@@ -1,6 +1,6 @@
 {
   "name": "@proofspace/typescript-rest",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "description": "A Library to create RESTFul APIs with Typescript",
   "author": "Thiago da Rosa de Bustamante <thiago@cruxframework.org>, pathed by rssh <ruslan@shevchenko.kiev.ua>",
   "keywords": [
