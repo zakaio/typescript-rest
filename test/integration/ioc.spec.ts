@@ -1,10 +1,10 @@
 import * as express from 'express';
 import * as _ from 'lodash';
 import * as request from 'request';
-import { Inject, OnlyInstantiableByContainer } from 'typescript-ioc';
+import { Inject, OnlyInstantiableByContainer } from '@proofspace/typescript-ioc';
 import { DefaultServiceFactory, GET, Path, Server } from '../../src/typescript-rest';
 
-Server.registerServiceFactory('typescript-rest-ioc');
+Server.registerServiceFactory('@proofspace/typescript-rest-ioc');
 
 @OnlyInstantiableByContainer
 export class InjectableObject { }

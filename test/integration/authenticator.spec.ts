@@ -203,6 +203,10 @@ describe('Authenticator Tests', () => {
                     'Authorization': `Bearer ${generateJwt()}`
                 }
             }, (error, response, body) => {
+		if (response.statusCode !== 403) {
+		   // tslint:disable-next-line:no-console
+		   console.log("response body: "+body);
+		}
                 expect(response.statusCode).toEqual(403);
                 done();
             });
@@ -327,6 +331,12 @@ let server: any;
 function startApi(): Promise<void> {
     return new Promise<void>((resolve, reject) => {
         const app: express.Application = express();
+	const session = require('express-session');
+	app.use(session({
+           resave: false,
+           saveUninitialized: true,
+           secret: 'session-secret'
+        }));
         app.set('env', 'test');
         configureAuthenticator();
         Server.buildServices(app, AuthenticatePath, AuthenticateRole,

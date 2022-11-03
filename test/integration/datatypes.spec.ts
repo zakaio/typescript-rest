@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as fs from 'fs';
 import * as _ from 'lodash';
 import * as request from 'request';
-import { Container } from 'typescript-ioc';
+import { Container } from '@proofspace/typescript-ioc';
 import {
     BodyOptions, BodyType, Context, ContextNext,
     ContextRequest, ContextResponse, CookieParam, FileParam, FormParam,
